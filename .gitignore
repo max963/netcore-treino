@@ -1,3 +1,5 @@
 
 src/StoreOfBuild.Domain/bin
 src/StoreOfBuild.Domain/obj
+src/StoreOfBuild.Web/obj
+src/StoreOfBuild.Web/bin
