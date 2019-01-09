@@ -21,12 +21,12 @@ namespace StoreOfBuild.Domain.Products
             var product = _productRepository.getById(dto.Id); 
 
             if(product == null){
-                product = new Product(dto.Name, dto.Price, dto.StockQuantity);
+                product = new Product(dto.Name, category, dto.Price, dto.StockQuantity);
                 _productRepository.Save(product);
             }
             else
             {
-                product.Update(dto.Name, dto.Price, dto.StockQuantity);
+                product.Update(dto.Name, category, dto.Price, dto.StockQuantity);
             }
         }
     }

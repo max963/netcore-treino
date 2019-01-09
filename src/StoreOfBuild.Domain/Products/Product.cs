@@ -32,7 +32,7 @@ namespace StoreOfBuild.Domain.Products
             DomainException.When(stockQuantity <= 0, "Stock quantity is required");
         }
 
-        public Update(string name, Category category, decimal price, int stockQuantity)
+        public void Update(string name, Category category, decimal price, int stockQuantity)
         {
             Validate(name, category, price, stockQuantity);
 
