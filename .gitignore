@@ -4,3 +4,4 @@ src/StoreOfBuild.Domain/obj
 src/StoreOfBuild.Web/obj
 src/StoreOfBuild.Web/bin
 src/StoreOfBuild.Web/node_modules
+.vscode
