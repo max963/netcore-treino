@@ -6,3 +6,4 @@ src/StoreOfBuild.Web/bin
 src/StoreOfBuild.Web/node_modules
 .vscode
 src/StoreOfBuild.Data/obj
+src/StoreOfBuild.Data/bin
