@@ -7,3 +7,5 @@ src/StoreOfBuild.Web/node_modules
 .vscode
 src/StoreOfBuild.Data/obj
 src/StoreOfBuild.Data/bin
+src/StoreOfBuild.DI/bin
+src/StoreOfBuild.DI/obj
