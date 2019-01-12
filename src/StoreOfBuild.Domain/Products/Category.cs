@@ -1,8 +1,8 @@
 namespace StoreOfBuild.Domain.Products
 {
-    public class Category
+    public class Category: Entity
     {
-        public int Id { get; set; }
+        
         public string Name { get; set; }
 
         public Category(string name)

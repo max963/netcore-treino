@@ -9,3 +9,4 @@ src/StoreOfBuild.Data/obj
 src/StoreOfBuild.Data/bin
 src/StoreOfBuild.DI/bin
 src/StoreOfBuild.DI/obj
+src/StoreOfBuild.Data/Migrations
