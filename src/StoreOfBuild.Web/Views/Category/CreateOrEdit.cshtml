@@ -1,27 +1,32 @@
-@model StoreOfBuild.Domain.Products.Category
+@model StoreOfBuild.Web.ViewModels.CategoryViewModel
 
 <h2>Formulário de Categoria</h2>
-
-<div class="row header">
-    <div class="col-md-12">
-        <h3>Category</h3>
-        <a href="/category" class="btn btn-primary">back</a>
+<div class="content">
+    <div class="row header">
+        <div class="col-md-12">
+            <h3>Category</h3>
+            <a href="/category" class="btn btn-primary">back</a>
+        </div>
     </div>
+
+    <form class="form-horizontal" asp-action="CreateOrEdit" asp-controlller="Category" method="POST">
+        <input type="hidden" asp-for="Id" class="form-control" />
+        <div class="form-group">
+            <label class="col-md-1 control-label" for="Name">Name</label>
+            <div class="col-md-2">
+                <input type="text" asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="col-md-1 form-group">
+            <div class="col-md-1">
+                <button class="btn btn-success">Salvar</button>
+            </div>
+        </div>
+    </form>
 </div>
 
-<form class="form-horizontal" asp-action="CreateOrEdit" asp-controlller="Category" method="POST">
-    <input type="hidden" asp-for="Id" class="form-control" />
-    <div class="form-group">
-        <label class="col-md-1 control-label" for="Name">Name</label>
-        <div class="col-md-2">
-            <input type="text" asp-for="Name" class="form-control" />
-        </div>
-    </div>
-    <div class="col-md-1 form-group">
-        <div class="col-md-1">
-            <button class="btn btn-success">Salvar</button>
-        </div>
-    </div>
-</form>
-
-=
+@section Scripts {
+    <script src="/js/jquery.validate.min.js"></script>
+    <script src="/js/jquery.validate.unobtrusive.min.js"></script>
+}
