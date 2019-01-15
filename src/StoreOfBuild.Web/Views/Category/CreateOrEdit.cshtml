@@ -8,25 +8,28 @@
             <a href="/category" class="btn btn-primary">back</a>
         </div>
     </div>
-
-    <form class="form-horizontal" asp-action="CreateOrEdit" asp-controlller="Category" method="POST">
-        <input type="hidden" asp-for="Id" class="form-control" />
-        <div class="form-group">
-            <label class="col-md-1 control-label" for="Name">Name</label>
-            <div class="col-md-2">
-                <input type="text" asp-for="Name" class="form-control" />
-                <span asp-validation-for="Name" class="text-danger"></span>
+    <div class="form-wrapper">
+        <form class="form-horizontal" asp-action="CreateOrEdit" asp-controlller="Category" data-ajax-method="POST" 
+            data-ajax="true" data-ajax-failure="formOnFail" data-ajax-success="window.location = '/category'" 
+                asp-anti-forgery>
+            <input type="hidden" asp-for="Id" class="form-control" />
+            <div class="form-group">
+                <label class="col-md-1 control-label" for="Name">Name</label>
+                <div class="col-md-2">
+                    <input type="text" asp-for="Name" class="form-control" />
+                    <span asp-validation-for="Name" class="text-danger"></span>
+                </div>
             </div>
-        </div>
-        <div class="col-md-1 form-group">
-            <div class="col-md-1">
-                <button class="btn btn-success">Salvar</button>
+            <div class="col-md-1 form-group">
+                <div class="col-md-1">
+                    <button class="btn btn-success">Salvar</button>
+                </div>
             </div>
-        </div>
-    </form>
+        </form>
+    </div>
 </div>
-
 @section Scripts {
     <script src="/js/jquery.validate.min.js"></script>
     <script src="/js/jquery.validate.unobtrusive.min.js"></script>
+    <script src="/js/jquery.unobtrusive-ajax.js"></script>
 }

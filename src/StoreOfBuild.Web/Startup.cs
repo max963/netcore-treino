@@ -11,6 +11,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using StoreOfBuild.DI;
 using StoreOfBuild.Domain;
+using StoreOfBuild.Web.Filters;
 
 namespace StoreOfBuild.Web
 {
@@ -29,6 +30,7 @@ namespace StoreOfBuild.Web
 
             Bootstrap.Configure(services, Configuration.GetConnectionString("DefaultConnection"));
 
+            
             services.Configure<CookiePolicyOptions>(options =>
             {
                 // This lambda determines whether user consent for non-essential cookies is needed for a given request.
@@ -36,6 +38,9 @@ namespace StoreOfBuild.Web
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
 
+            services.AddMvc(config => {
+                config.Filters.Add(typeof(CustomExceptionFilter));
+            });
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }

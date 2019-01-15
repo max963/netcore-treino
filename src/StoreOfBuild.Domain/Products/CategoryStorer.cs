@@ -1,5 +1,3 @@
-using StoreOfBuild.Domain.Dtos;
-
 namespace StoreOfBuild.Domain.Products
 {
     public class CategoryStorer

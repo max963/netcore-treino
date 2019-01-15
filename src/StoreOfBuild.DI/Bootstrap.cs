@@ -13,10 +13,12 @@ namespace StoreOfBuild.DI
         {
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(connectionString));
-
+            services.AddScoped(typeof(IRepository<Product>), typeof(ProductRepository));
             services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
-            services.AddScoped(typeof(IUnitOfWork), typeof(UnitOfWork));
             services.AddScoped(typeof(CategoryStorer));
+            services.AddScoped(typeof(ProductStorer));
+            services.AddScoped(typeof(IUnitOfWork), typeof(UnitOfWork));
+
         }
     }
 }

@@ -1,4 +1,33 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
-}
+﻿@model IEnumerable<StoreOfBuild.Web.ViewModels.CategoryViewModel>
+
+<h2>Todas as Categorias</h2>
+
+<a href="/categoria/salvar" class="btn">Nova Categoria</a>
+
+<div class="row">
+    <div class="col-md-12">
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>edit</th>
+                </tr>
+                
+            </thead>
+            <tbody>
+                @foreach (var item in @Model)
+                {
+                    <tr>
+                        <td>@item.Name </td>
+                        <td>
+                            <a href="/Category/CreateOrEdit/@item.Id" class="btn">Editar</a>
+                        </td>
+
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+
+</div>
 

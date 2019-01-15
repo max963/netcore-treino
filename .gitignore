@@ -10,3 +10,7 @@ src/StoreOfBuild.Data/bin
 src/StoreOfBuild.DI/bin
 src/StoreOfBuild.DI/obj
 src/StoreOfBuild.Data/Migrations
+.vs/StoreOfBuild/v15/.suo
+
+.vs
+src/StoreOfBuild.Web/yarn-error.log
