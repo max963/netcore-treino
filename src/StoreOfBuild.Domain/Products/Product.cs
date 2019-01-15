@@ -40,5 +40,10 @@ namespace StoreOfBuild.Domain.Products
             SetProperties(name, category, price, stockQuantity);
         }
 
+        public void RemoveFromStock(int quantity)
+        {
+            DomainException.When((StockQuantity - quantity) < 0, "Quantity invalid to product stock");
+            StockQuantity -= quantity;
+        }
     }
 }

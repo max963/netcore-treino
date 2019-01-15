@@ -25,9 +25,12 @@ namespace StoreOfBuild.Data
 
         public override IEnumerable<Product> All()
         {
-            return _context.Set<Product>().Include(p => p.Category).AsEnumerable();
+             var query = _context.Set<Product>().Include(p => p.Category);
+
+            return query.Any() ? query.ToList() : new List<Product>();
         }
 
+        
 
     }
 }
